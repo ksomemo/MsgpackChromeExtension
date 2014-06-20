@@ -1,6 +1,7 @@
 ## Msgpack Chrome Extension
 
 ChromeからJSONをMsgPackに変換するためのExtension
+(http://msgpack.org/ のTry!と同じ)
 
 ### 使い方
 
