@@ -1,0 +1,3 @@
+[submodule "app/js/lib/msgpack-javascript"]
+	path = app/js/lib/msgpack-javascript
+	url = https://github.com/msgpack/msgpack-javascript.git
