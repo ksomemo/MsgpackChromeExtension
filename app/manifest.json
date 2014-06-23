@@ -16,6 +16,8 @@
 		"default_popup" : "popup.html"
 	},
 	"permissions" : [
+		"webRequest",
+		"webRequestBlocking",
 		"tabs",
 		"http://*/*"
 	],
