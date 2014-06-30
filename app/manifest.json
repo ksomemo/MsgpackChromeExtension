@@ -27,6 +27,7 @@
 				"http://*/*"
 			],
 			"js": [
+				"js/lib/msgpack-javascript/msgpack.js",
 				"js/lib/jquery.min.js",
 				"js/contents.js"
 			],
