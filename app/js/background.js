@@ -1,3 +1,5 @@
+// backgournd.htmlで動作→Scriptが読み込まれているだけのページ
+
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     chrome.pageAction.setIcon({
         tabId: tabId, 
@@ -27,6 +29,7 @@ chrome.webRequest.onHeadersReceived.addListener(
         details.responseHeaders.forEach(function(header) {
             if (header.name === "Content-Type" && header.value === "application/x-msgpack") {
                 isMsgpack = true;
+                header.value = "text/html";
             }
         });
         console.log("isMsgpack:", isMsgpack);
@@ -41,4 +44,19 @@ chrome.webRequest.onHeadersReceived.addListener(
         "responseHeaders",
         "blocking"
     ]
+);
+
+//var issues = {};
+chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse){
+
+console.log("request---------");
+console.log(request);
+console.log("sender---------");
+console.log(sender);
+
+//        chrome.pageAction.show(sender.tab.id);
+//        issues[sender.tab.id] = request.issues;
+        sendResponse({tabid:sender.tab.id});
+    }
 );
